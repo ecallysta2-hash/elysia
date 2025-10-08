@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Pribadi - Elysia Callysta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #d9a5b3; /* Warna merah muda dari gambar */
+            --secondary-color: #f5f5f5; /* Warna putih dari gambar */
+            --accent-color: #8e8e8e; /* Warna abu-abu dari gambar */
+            --text-color: #333;
+            --card-bg: rgba(245, 245, 245, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Bree Serif', serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            background-image: url('https://z-cdn-media.chatglm.cn/files/ddbb933d-9b42-4202-9c1b-7a1c34e993eb_WhatsApp%20Image%202025-10-01%20at%2018.25.06_cc108e5f.jpg?auth_key=1790854094-ef02e6cade294fcea35465185a519b11-0-441a9e0e02e2c56598854ac5622c6958');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .language-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-family: 'Bree Serif', serif;
+            transition: all 0.3s ease;
+            font-size: 0.7rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-btn:hover {
+            background-color: #c792a0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .language-btn.active {
+            background-color: var(--accent-color);
+        }
+
+        .welcome-text {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .biodata {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border: 2px solid var(--primary-color);
+        }
+
+        .biodata h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .photo-frame {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 0 10px rgba(217, 165, 179, 0.5);
+            position: relative;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-frame:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-frame::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+        }
+
+        .biodata-item {
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .biodata-label {
+            font-weight: bold;
+            margin-bottom: 3px;
+            font-size: 0.8rem;
+        }
+
+        .biodata-value {
+            flex: 1;
+            overflow-x: auto;
+            white-space: nowrap;
+            font-size: 0.75rem;
+            padding: 3px 0;
+        }
+
+        .kelebihan {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .kelebihan h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .kelebihan-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .kelebihan-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .kelebihan-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .kelebihan-card::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .butterfly {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: var(--primary-color);
+            border-radius: 50% 50% 0 50%;
+            transform: rotate(45deg);
+            opacity: 0.7;
+            z-index: 1;
+            animation: fly 8s infinite alternate;
+        }
+
+        .butterfly::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 0;
+            width: 25px;
+            height: 25px;
+            background-color: var(--primary-color);
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-90deg);
+        }
+
+        .butterfly::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: rotate(45deg) translate(0, 0);
+            }
+            25% {
+                transform: rotate(45deg) translate(15px, 15px);
+            }
+            50% {
+                transform: rotate(45deg) translate(-8px, 20px);
+            }
+            75% {
+                transform: rotate(45deg) translate(12px, -8px);
+            }
+            100% {
+                transform: rotate(45deg) translate(0, 0);
+            }
+        }
+
+        .keterampilan {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .keterampilan h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .skill-category {
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-3px);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+        }
+
+        .skill-category h3 i {
+            margin-right: 8px;
+            font-size: 1.3rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .skill-item {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .skill-name {
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        .skill-name span {
+            font-weight: bold;
+        }
+
+        .skill-percentage {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+        }
+
+        .skill-bar {
+            height: 12px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), #f5b6c1);
+            border-radius: 10px;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+            position: relative;
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, .2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, .2) 50%,
+                rgba(255, 255, 255, .2) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 30px 30px;
+            animation: move 2s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 30px 30px;
+            }
+        }
+
+        .skill-description {
+            font-size: 0.7rem;
+            color: var(--accent-color);
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .skill-icon {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 8px;
+            font-size: 0.7rem;
+        }
+
+        .dokumentasi {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .dokumentasi h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .dokumentasi-frames {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .frame {
+            width: 250px;
+            height: 250px;
+            border: 4px solid var(--primary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: white;
+        }
+
+        .frame:hover {
+            transform: scale(1.03);
+        }
+
+        .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .frame:hover img {
+            transform: scale(1.1);
+        }
+
+        .frame-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(217, 165, 179, 0.8);
+            color: white;
+            padding: 6px;
+            text-align: center;
+            font-size: 0.7rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .frame:hover .frame-caption {
+            transform: translateY(0);
+        }
+
+        .frame-error {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--accent-color);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .frame-error i {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .frame-error h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .frame-error p {
+            font-size: 0.8rem;
+        }
+
+        /* Font untuk bahasa China */
+        body[lang="zh"] {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+
+        body[lang="zh"] .welcome-text,
+        body[lang="zh"] .biodata h2,
+        body[lang="zh"] .kelebihan h2,
+        body[lang="zh"] .keterampilan h2,
+        body[lang="zh"] .dokumentasi h2,
+        body[lang="zh"] .skill-category h3 {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+
+        /* Font untuk bahasa Jepang */
+        body[lang="ja"] {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        body[lang="ja"] .welcome-text,
+        body[lang="ja"] .biodata h2,
+        body[lang="ja"] .kelebihan h2,
+        body[lang="ja"] .keterampilan h2,
+        body[lang="ja"] .dokumentasi h2,
+        body[lang="ja"] .skill-category h3 {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        /* Font untuk bahasa Rusia */
+        body[lang="ru"] {
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        body[lang="ru"] .welcome-text,
+        body[lang="ru"] .biodata h2,
+        body[lang="ru"] .kelebihan h2,
+        body[lang="ru"] .keterampilan h2,
+        body[lang="ru"] .dokumentasi h2,
+        body[lang="ru"] .skill-category h3 {
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        /* Font untuk bahasa Korea */
+        body[lang="ko"] {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body[lang="ko"] .welcome-text,
+        body[lang="ko"] .biodata h2,
+        body[lang="ko"] .kelebihan h2,
+        body[lang="ko"] .keterampilan h2,
+        body[lang="ko"] .dokumentasi h2,
+        body[lang="ko"] .skill-category h3 {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        /* Font untuk bahasa Arab */
+        body[lang="ar"] {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            direction: rtl;
+        }
+
+        body[lang="ar"] .welcome-text,
+        body[lang="ar"] .biodata h2,
+        body[lang="ar"] .kelebihan h2,
+        body[lang="ar"] .keterampilan h2,
+        body[lang="ar"] .dokumentasi h2,
+        body[lang="ar"] .skill-category h3 {
+            font-family: 'Noto Sans Arabic', sans-serif;
+        }
+
+        body[lang="ar"] .skill-icon {
+            margin-left: 8px;
+            margin-right: 0;
+        }
+
+        body[lang="ar"] .skill-category h3 i {
+            margin-left: 8px;
+            margin-right: 0;
+        }
+
+        body[lang="ar"] .biodata-item {
+            flex-direction: row;
+        }
+
+        body[lang="ar"] .biodata-label {
+            margin-left: 10px;
+            margin-bottom: 0;
+        }
+
+        body[lang="ar"] .biodata-label::after {
+            content: "";
+            position: static;
+        }
+
+        /* Tablet */
+        @media (min-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .language-selector {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: auto;
+                margin-bottom: 0;
+                gap: 6px;
+            }
+
+            .language-btn {
+                padding: 5px 10px;
+                font-size: 0.75rem;
+            }
+
+            .welcome-text {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+            }
+
+            .biodata h2,
+            .kelebihan h2,
+            .keterampilan h2,
+            .dokumentasi h2 {
+                font-size: 1.8rem;
+            }
+
+            .photo-frame {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto 20px;
+            }
+
+            .biodata-item {
+                flex-direction: row;
+                margin-bottom: 12px;
+            }
+
+            .biodata-label {
+                min-width: 150px;
+                position: relative;
+                margin-bottom: 0;
+                font-size: 0.9rem;
+            }
+
+            .biodata-label::after {
+                content: ":";
+                position: absolute;
+                right: 10px;
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+            }
+
+            .biodata-value {
+                font-size: 0.9rem;
+            }
+
+            .kelebihan-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .kelebihan-card {
+                padding: 15px;
+                font-size: 1rem;
+            }
+
+            .butterfly {
+                width: 30px;
+                height: 30px;
+            }
+
+            .butterfly::before {
+                top: -15px;
+                left: 0;
+                width: 30px;
+                height: 30px;
+            }
+
+            .butterfly::after {
+                top: 15px;
+                left: 15px;
+                width: 15px;
+                height: 15px;
+            }
+
+            .skill-category {
+                padding: 20px;
+                margin-bottom: 25px;
+            }
+
+            .skill-category h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+            }
+
+            .skill-category h3 i {
+                margin-right: 10px;
+                font-size: 1.8rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+
+            .skill-item {
+                margin-bottom: 15px;
+            }
+
+            .skill-name {
+                margin-bottom: 8px;
+                font-size: 1rem;
+            }
+
+            .skill-percentage {
+                padding: 2px 8px;
+                font-size: 0.9rem;
+            }
+
+            .skill-bar {
+                height: 15px;
+            }
+
+            .skill-description {
+                font-size: 0.9rem;
+                margin-top: 5px;
+            }
+
+            .skill-icon {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                margin-right: 10px;
+                font-size: 0.9rem;
+            }
+
+            .dokumentasi {
+                padding: 25px;
+                margin-top: 20px;
+            }
+
+            .dokumentasi-frames {
+                justify-content: space-around;
+            }
+
+            .frame {
+                width: 300px;
+                height: 300px;
+            }
+
+            .frame-caption {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+
+            .frame-error i {
+                font-size: 3rem;
+                margin-bottom: 10px;
+            }
+
+            .frame-error h3 {
+                font-size: 1.2rem;
+            }
+
+            .frame-error p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 1024px) {
+            .keterampilan {
+                grid-column: span 2;
+            }
+
+            .dokumentasi {
+                grid-column: span 2;
+            }
+        }
+    </style>
+</head>
+<body lang="id">
+    <div class="container">
+        <header>
+            <div class="language-selector">
+                <button class="language-btn active" data-lang="id">ID</button>
+                <button class="language-btn" data-lang="en">EN</button>
+                <button class="language-btn" data-lang="zh">中文</button>
+                <button class="language-btn" data-lang="ja">日本語</button>
+                <button class="language-btn" data-lang="ru">RU</button>
+                <button class="language-btn" data-lang="ko">한국어</button>
+                <button class="language-btn" data-lang="nl">NL</button>
+                <button class="language-btn" data-lang="ar">العربية</button>
+            </div>
+            <h1 class="welcome-text" data-translate="welcome">Selamat Datang di Profil Saya</h1>
+            <p class="subtitle" data-translate="subtitle">Jelajahi kisah perjalanan dan kemampuan saya</p>
+        </header>
+
+        <div class="content">
+            <div class="biodata">
+                <h2 data-translate="biodata-title">𝘽𝙄𝙊𝘿𝘼𝙏𝘼</h2>
+                <div class="photo-frame">
+                    <img src="https://z-cdn-media.chatglm.cn/files/57777e80-8fc9-4889-aeed-d37cedfc62f0_WhatsApp%20Image%202025-10-01%20at%2018.38.37_4023b66a.jpg?auth_key=1790855138-e33e79daad1845a3bb6d7da4bcb1e42b-0-73e84611b91dcf382987996ff858c222" alt="Foto Profil Elysia Callysta">
+                </div>
+                <div class="biodata-item">
+                    <div class="biodata-label" data-translate="name-label">Nama</div>
+                    <div class="biodata-value">Elysia Callysta</div>
+                </div>
+                <div class="biodata-item">
+                    <div class="biodata-label" data-translate="birth-label">Tempat, Tanggal lahir</div>
+                    <div class="biodata-value">Pekalongan, 28 Juni 2009</div>
+                </div>
+                <div class="biodata-item">
+                    <div class="biodata-label" data-translate="gender-label">Jenis Kelamin</div>
+                    <div class="biodata-value" data-translate="gender-value">Perempuan</div>
+                </div>
+                <div class="biodata-item">
+                    <div class="biodata-label" data-translate="religion-label">Agama</div>
+                    <div class="biodata-value" data-translate="religion-value">Islam</div>
+                </div>
+                <div class="biodata-item">
+                    <div class="biodata-label" data-translate="nationality-label">Kewarganegaraan</div>
+                    <div class="biodata-value" data-translate="nationality-value">Indonesia</div>
+                </div>
+                <div class="biodata-item">
+                    <div class="biodata-label" data-translate="address-label">Alamat</div>
+                    <div class="biodata-value">Jalan Dadirejo Barat, RT.3/RW.1, Cokrah Gandu, Dadirejo, Wiradesa, KAB. Pekalongan, Jawa Tengah</div>
+                </div>
+                <div class="biodata-item">
+                    <div class="biodata-label" data-translate="email-label">Email</div>
+                    <div class="biodata-value">ecallysta2@gmail.com</div>
+                </div>
+                <div class="biodata-item">
+                    <div class="biodata-label" data-translate="hobby-label">Hobi</div>
+                    <div class="biodata-value" data-translate="hobby-value">Menggambar, Menulis, membaca, mendengarkan musik, renang</div>
+                </div>
+            </div>
+
+            <div class="kelebihan">
+                <h2 data-translate="strengths-title">𝙆𝙚𝙡𝙚𝙗𝙞𝙝𝙖𝙣</h2>
+                <div class="kelebihan-list">
+                    <div class="kelebihan-card">
+                        <div class="butterfly"></div>
+                        <p data-translate="strength-1">Kreatif</p>
+                    </div>
+                    <div class="kelebihan-card">
+                        <div class="butterfly"></div>
+                        <p data-translate="strength-2">Sabar</p>
+                    </div>
+                    <div class="kelebihan-card">
+                        <div class="butterfly"></div>
+                        <p data-translate="strength-3">Jujur</p>
+                    </div>
+                    <div class="kelebihan-card">
+                        <div class="butterfly"></div>
+                        <p data-translate="strength-4">Berpikir kritis</p>
+                    </div>
+                    <div class="kelebihan-card">
+                        <div class="butterfly"></div>
+                        <p data-translate="strength-5">Empati</p>
+                    </div>
+                    <div class="kelebihan-card">
+                        <div class="butterfly"></div>
+                        <p data-translate="strength-6">Rajin dan tekun</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="keterampilan">
+                <h2 data-translate="skills-title">𝙆𝙚𝙩𝙧𝙖𝙢𝙥𝙞𝙡𝙖𝙣</h2>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-user"></i> <span data-translate="personal-skills">Personal Skill</span></h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-tasks"></i></span>
+                                    <span data-translate="skill-time-management">Manajemen waktu</span>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-time-management-desc">Mengatur waktu dengan efektif untuk mencapai tujuan</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-check-circle"></i></span>
+                                    <span data-translate="skill-discipline">Disiplin</span>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-discipline-desc">Konsisten dalam menjalankan tugas dan tanggung jawab</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-hourglass-half"></i></span>
+                                    <span data-translate="skill-patience">Sabar dan tekun</span>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-patience-desc">Bertahan dalam menghadapi kesulitan dengan tenang</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-handshake"></i></span>
+                                    <span data-translate="skill-responsibility">Tanggung jawab</span>
+                                </div>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-responsibility-desc">Menepati janji dan melaksanakan kewajiban dengan baik</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-star"></i></span>
+                                    <span data-translate="skill-confidence">Percaya diri</span>
+                                </div>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-confidence-desc">Memiliki keyakinan terhadap kemampuan diri sendiri</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-sort-amount-up"></i></span>
+                                    <span data-translate="skill-prioritization">Mengatur prioritas</span>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-prioritization-desc">Mampu menentukan urutan pentingnya suatu pekerjaan</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-paint-brush"></i> <span data-translate="creative-skills">Kreatif</span></h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-pen"></i></span>
+                                    <span data-translate="skill-writing">Menulis</span>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-writing-desc">Mampu menulis cerpen, artikel, dan jurnal dengan baik</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-pencil-alt"></i></span>
+                                    <span data-translate="skill-drawing">Menggambar</span>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-drawing-desc">Mampu menggambar berbagai objek dengan teknik yang baik</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-palette"></i></span>
+                                    <span data-translate="skill-design">Desain sederhana</span>
+                                </div>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-design-desc">Mampu membuat desain sederhana menggunakan Canva</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-users"></i> <span data-translate="social-skills">Social Skill</span></h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-users"></i></span>
+                                    <span data-translate="skill-teamwork">Kerja sama tim</span>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-teamwork-desc">Mampu bekerja sama dalam tim untuk mencapai tujuan bersama</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-comments"></i></span>
+                                    <span data-translate="skill-negotiation">Negosiasi</span>
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-negotiation-desc">Mampu mencapai kesepakatan yang saling menguntungkan</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-heart"></i></span>
+                                    <span data-translate="skill-empathy">Empati dan kepedulian</span>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-empathy-desc">Mampu merasakan dan memahami perasaan orang lain</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <div>
+                                    <span class="skill-icon"><i class="fas fa-headphones"></i></span>
+                                    <span data-translate="skill-listening">Kemampuan mendengarkan</span>
+                                </div>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                            <div class="skill-description" data-translate="skill-listening-desc">Mampu mendengarkan dengan penuh perhatian dan pemahaman</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dokumentasi">
+                <h2 data-translate="documentation-title">Dokumentasi</h2>
+                <div class="dokumentasi-frames">
+                    <div class="frame">
+                        <img src="https://z-cdn-media.chatglm.cn/files/c35d5bc5-772b-4e48-9982-762251cbf437_WhatsApp%20Image%202025-10-01%20at%2018.44.03_05cb36a9.jpg?auth_key=1790855866-73f2c1c9278f42feb6b46fee12ad6ae1-0-b629a34fcd97e33a9b1f4d57c2cdec09" alt="Kegiatan Bersama" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="frame-error" style="display: none;">
+                            <i class="fas fa-users"></i>
+                            <h3 data-translate="activity-title">Kegiatan Bersama</h3>
+                            <p data-translate="activity-desc">Foto dokumentasi kegiatan bersama di luar ruangan</p>
+                        </div>
+                        <div class="frame-caption" data-translate="activity-caption">Kegiatan Bersama di Luar Ruangan</div>
+                    </div>
+                    <div class="frame">
+                        <img src="https://z-cdn-media.chatglm.cn/files/44f26803-f586-4999-9be3-4c885e4966ab_WhatsApp%20Image%202025-10-01%20at%2018.41.31_fccf6d17.jpg?auth_key=1790856089-2b7decbef5e146bba74119959dbf4c96-0-f1201d9d297315024f13f6e88475dda6" alt="Sketsa Pensil" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="frame-error" style="display: none;">
+                            <i class="fas fa-pencil-alt"></i>
+                            <h3 data-translate="sketch-title">Karya Sketsa</h3>
+                            <p data-translate="sketch-desc">Hasil karya sketsa pensil</p>
+                        </div>
+                        <div class="frame-caption" data-translate="sketch-caption">Karya Sketsa Pensil</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data terjemahan untuk setiap bahasa
+        const translations = {
+            id: {
+                welcome: "Selamat Datang di Profil Saya",
+                subtitle: "Jelajahi kisah perjalanan dan kemampuan saya",
+                "biodata-title": "𝘽𝙄𝙊𝘿𝘼𝙏𝘼",
+                "name-label": "Nama",
+                "birth-label": "Tempat, Tanggal lahir",
+                "gender-label": "Jenis Kelamin",
+                "gender-value": "Perempuan",
+                "religion-label": "Agama",
+                "religion-value": "Islam",
+                "nationality-label": "Kewarganegaraan",
+                "nationality-value": "Indonesia",
+                "address-label": "Alamat",
+                "email-label": "Email",
+                "hobby-label": "Hobi",
+                "hobby-value": "Menggambar, Menulis, membaca, mendengarkan musik, renang",
+                "strengths-title": "𝙆𝙚𝙡𝙚𝙗𝙞𝙝𝙖𝙣",
+                "strength-1": "Kreatif",
+                "strength-2": "Sabar",
+                "strength-3": "Jujur",
+                "strength-4": "Berpikir kritis",
+                "strength-5": "Empati",
+                "strength-6": "Rajin dan tekun",
+                "skills-title": "𝙆𝙚𝙩𝙧𝙖𝙢𝙥𝙞𝙡𝙖𝙣",
+                "personal-skills": "Personal Skill",
+                "skill-time-management": "Manajemen waktu",
+                "skill-time-management-desc": "Mengatur waktu dengan efektif untuk mencapai tujuan",
+                "skill-discipline": "Disiplin",
+                "skill-discipline-desc": "Konsisten dalam menjalankan tugas dan tanggung jawab",
+                "skill-patience": "Sabar dan tekun",
+                "skill-patience-desc": "Bertahan dalam menghadapi kesulitan dengan tenang",
+                "skill-responsibility": "Tanggung jawab",
+                "skill-responsibility-desc": "Menepati janji dan melaksanakan kewajiban dengan baik",
+                "skill-confidence": "Percaya diri",
+                "skill-confidence-desc": "Memiliki keyakinan terhadap kemampuan diri sendiri",
+                "skill-prioritization": "Mengatur prioritas",
+                "skill-prioritization-desc": "Mampu menentukan urutan pentingnya suatu pekerjaan",
+                "creative-skills": "Kreatif",
+                "skill-writing": "Menulis",
+                "skill-writing-desc": "Mampu menulis cerpen, artikel, dan jurnal dengan baik",
+                "skill-drawing": "Menggambar",
+                "skill-drawing-desc": "Mampu menggambar berbagai objek dengan teknik yang baik",
+                "skill-design": "Desain sederhana",
+                "skill-design-desc": "Mampu membuat desain sederhana menggunakan Canva",
+                "social-skills": "Social Skill",
+                "skill-teamwork": "Kerja sama tim",
+                "skill-teamwork-desc": "Mampu bekerja sama dalam tim untuk mencapai tujuan bersama",
+                "skill-negotiation": "Negosiasi",
+                "skill-negotiation-desc": "Mampu mencapai kesepakatan yang saling menguntungkan",
+                "skill-empathy": "Empati dan kepedulian",
+                "skill-empathy-desc": "Mampu merasakan dan memahami perasaan orang lain",
+                "skill-listening": "Kemampuan mendengarkan",
+                "skill-listening-desc": "Mampu mendengarkan dengan penuh perhatian dan pemahaman",
+                "documentation-title": "Dokumentasi",
+                "activity-title": "Kegiatan Bersama",
+                "activity-desc": "Foto dokumentasi kegiatan bersama di luar ruangan",
+                "activity-caption": "Kegiatan Bersama di Luar Ruangan",
+                "sketch-title": "Karya Sketsa",
+                "sketch-desc": "Hasil karya sketsa pensil",
+                "sketch-caption": "Karya Sketsa Pensil"
+            },
+            en: {
+                welcome: "Welcome to My Profile",
+                subtitle: "Explore my journey and abilities",
+                "biodata-title": "𝘽𝙄𝙊𝘿𝘼𝙏𝘼",
+                "name-label": "Name",
+                "birth-label": "Place, Date of Birth",
+                "gender-label": "Gender",
+                "gender-value": "Female",
+                "religion-label": "Religion",
+                "religion-value": "Islam",
+                "nationality-label": "Nationality",
+                "nationality-value": "Indonesia",
+                "address-label": "Address",
+                "email-label": "Email",
+                "hobby-label": "Hobbies",
+                "hobby-value": "Drawing, Writing, reading, listening to music, swimming",
+                "strengths-title": "𝙎𝙏𝙍𝙀𝙉𝙂𝙏𝙃𝙎",
+                "strength-1": "Creative",
+                "strength-2": "Patient",
+                "strength-3": "Honest",
+                "strength-4": "Critical thinking",
+                "strength-5": "Empathetic",
+                "strength-6": "Diligent and persistent",
+                "skills-title": "𝙎𝙆𝙄𝙇𝙇𝙎",
+                "personal-skills": "Personal Skill",
+                "skill-time-management": "Time management",
+                "skill-time-management-desc": "Effectively manage time to achieve goals",
+                "skill-discipline": "Discipline",
+                "skill-discipline-desc": "Consistent in carrying out tasks and responsibilities",
+                "skill-patience": "Patient and persistent",
+                "skill-patience-desc": "Endure difficulties with calmness",
+                "skill-responsibility": "Responsibility",
+                "skill-responsibility-desc": "Keep promises and fulfill obligations well",
+                "skill-confidence": "Confidence",
+                "skill-confidence-desc": "Have confidence in one's own abilities",
+                "skill-prioritization": "Prioritization",
+                "skill-prioritization-desc": "Able to determine the importance order of a task",
+                "creative-skills": "Creative",
+                "skill-writing": "Writing",
+                "skill-writing-desc": "Able to write short stories, articles, and journals well",
+                "skill-drawing": "Drawing",
+                "skill-drawing-desc": "Able to draw various objects with good techniques",
+                "skill-design": "Simple design",
+                "skill-design-desc": "Able to create simple designs using Canva",
+                "social-skills": "Social Skill",
+                "skill-teamwork": "Teamwork",
+                "skill-teamwork-desc": "Able to work in a team to achieve common goals",
+                "skill-negotiation": "Negotiation",
+                "skill-negotiation-desc": "Able to reach mutually beneficial agreements",
+                "skill-empathy": "Empathy and care",
+                "skill-empathy-desc": "Able to feel and understand the feelings of others",
+                "skill-listening": "Listening ability",
+                "skill-listening-desc": "Able to listen with full attention and understanding",
+                "documentation-title": "Documentation",
+                "activity-title": "Group Activities",
+                "activity-desc": "Documentation photos of outdoor group activities",
+                "activity-caption": "Outdoor Group Activities",
+                "sketch-title": "Sketch Work",
+                "sketch-desc": "Pencil sketch artwork",
+                "sketch-caption": "Pencil Sketch Artwork"
+            },
+            zh: {
+                welcome: "欢迎来到我的个人资料",
+                subtitle: "探索我的旅程和能力",
+                "biodata-title": "个 人 资 料",
+                "name-label": "姓名",
+                "birth-label": "出生地点、日期",
+                "gender-label": "性别",
+                "gender-value": "女",
+                "religion-label": "宗教",
+                "religion-value": "伊斯兰教",
+                "nationality-label": "国籍",
+                "nationality-value": "印度尼西亚",
+                "address-label": "地址",
+                "email-label": "电子邮件",
+                "hobby-label": "爱好",
+                "hobby-value": "绘画、写作、阅读、听音乐、游泳",
+                "strengths-title": "优 点",
+                "strength-1": "创造力",
+                "strength-2": "耐心",
+                "strength-3": "诚实",
+                "strength-4": "批判性思维",
+                "strength-5": "同理心",
+                "strength-6": "勤奋和坚持",
+                "skills-title": "技 能",
+                "personal-skills": "个人技能",
+                "skill-time-management": "时间管理",
+                "skill-time-management-desc": "有效管理时间以实现目标",
+                "skill-discipline": "纪律",
+                "skill-discipline-desc": "在执行任务和责任方面保持一致",
+                "skill-patience": "耐心和坚持",
+                "skill-patience-desc": "冷静地面对困难",
+                "skill-responsibility": "责任感",
+                "skill-responsibility-desc": "信守承诺并履行义务",
+                "skill-confidence": "自信",
+                "skill-confidence-desc": "对自己的能力有信心",
+                "skill-prioritization": "优先级排序",
+                "skill-prioritization-desc": "能够确定任务的重要性顺序",
+                "creative-skills": "创造力",
+                "skill-writing": "写作",
+                "skill-writing-desc": "能够很好地写短篇小说、文章和日记",
+                "skill-drawing": "绘画",
+                "skill-drawing-desc": "能够用良好的技巧绘制各种物体",
+                "skill-design": "简单设计",
+                "skill-design-desc": "能够使用Canva创建简单设计",
+                "social-skills": "社交技能",
+                "skill-teamwork": "团队合作",
+                "skill-teamwork-desc": "能够在团队中合作以实现共同目标",
+                "skill-negotiation": "谈判",
+                "skill-negotiation-desc": "能够达成互惠互利的协议",
+                "skill-empathy": "同理心和关怀",
+                "skill-empathy-desc": "能够感受和理解他人的感受",
+                "skill-listening": "倾听能力",
+                "skill-listening-desc": "能够全神贯注和理解地倾听",
+                "documentation-title": "文档",
+                "activity-title": "集体活动",
+                "activity-desc": "户外集体活动的文档照片",
+                "activity-caption": "户外集体活动",
+                "sketch-title": "素描作品",
+                "sketch-desc": "铅笔素描作品",
+                "sketch-caption": "铅笔素描作品"
+            },
+            ja: {
+                welcome: "私のプロフィールへようこそ",
+                subtitle: "私の旅と能力を探求する",
+                "biodata-title": "個 人 デ ー タ",
+                "name-label": "名前",
+                "birth-label": "出生地、生年月日",
+                "gender-label": "性別",
+                "gender-value": "女性",
+                "religion-label": "宗教",
+                "religion-value": "イスラム教",
+                "nationality-label": "国籍",
+                "nationality-value": "インドネシア",
+                "address-label": "住所",
+                "email-label": "メール",
+                "hobby-label": "趣味",
+                "hobby-value": "絵を描く、執筆、読書、音楽を聴く、水泳",
+                "strengths-title": "長 所",
+                "strength-1": "創造性",
+                "strength-2": "忍耐強い",
+                "strength-3": "正直",
+                "strength-4": "批判的思考",
+                "strength-5": "共感",
+                "strength-6": "勤勉で粘り強い",
+                "skills-title": "ス キ ル",
+                "personal-skills": "パーソナルスキル",
+                "skill-time-management": "時間管理",
+                "skill-time-management-desc": "目標を達成するために効果的に時間を管理する",
+                "skill-discipline": "規律",
+                "skill-discipline-desc": "タスクと責任を一貫して実行する",
+                "skill-patience": "忍耐強さと粘り強さ",
+                "skill-patience-desc": "冷静に困難に耐える",
+                "skill-responsibility": "責任感",
+                "skill-responsibility-desc": "約束を守り、義務をよく果たす",
+                "skill-confidence": "自信",
+                "skill-confidence-desc": "自分の能力に自信を持つ",
+                "skill-prioritization": "優先順位付け",
+                "skill-prioritization-desc": "タスクの重要性の順序を決定できる",
+                "creative-skills": "創造性",
+                "skill-writing": "執筆",
+                "skill-writing-desc": "短編小説、記事、日記をよく書くことができる",
+                "skill-drawing": "絵を描く",
+                "skill-drawing-desc": "良い技術で様々な物体を描くことができる",
+                "skill-design": "簡単なデザイン",
+                "skill-design-desc": "Canvaを使用して簡単なデザインを作成できる",
+                "social-skills": "ソーシャルスキル",
+                "skill-teamwork": "チームワーク",
+                "skill-teamwork-desc": "共通の目標を達成するためにチームで協力できる",
+                "skill-negotiation": "交渉",
+                "skill-negotiation-desc": "互恵的な合意に達することができる",
+                "skill-empathy": "共感と思いやり",
+                "skill-empathy-desc": "他人の感情を感じ理解することができる",
+                "skill-listening": "聞く能力",
+                "skill-listening-desc": "完全な注意と理解を持って聞くことができる",
+                "documentation-title": "ドキュメンテーション",
+                "activity-title": "グループ活動",
+                "activity-desc": "屋外グループ活動のドキュメンテーション写真",
+                "activity-caption": "屋外グループ活動",
+                "sketch-title": "スケッチ作品",
+                "sketch-desc": "鉛筆スケッチ作品",
+                "sketch-caption": "鉛筆スケッチ作品"
+            },
+            ru: {
+                welcome: "Добро пожаловать в мой профиль",
+                subtitle: "Исследуйте мой путь и способности",
+                "biodata-title": "Л И Ч Н Ы Е Д А Н Н Ы Е",
+                "name-label": "Имя",
+                "birth-label": "Место, дата рождения",
+                "gender-label": "Пол",
+                "gender-value": "Женский",
+                "religion-label": "Религия",
+                "religion-value": "Ислам",
+                "nationality-label": "Гражданство",
+                "nationality-value": "Индонезия",
+                "address-label": "Адрес",
+                "email-label": "Электронная почта",
+                "hobby-label": "Хобби",
+                "hobby-value": "Рисование, письмо, чтение, прослушивание музыки, плавание",
+                "strengths-title": "П Р Е И М У Щ Е С Т В А",
+                "strength-1": "Творческий",
+                "strength-2": "Терпеливый",
+                "strength-3": "Честный",
+                "strength-4": "Критическое мышление",
+                "strength-5": "Эмпатия",
+                "strength-6": "Трудолюбивый и настойчивый",
+                "skills-title": "Н А В Ы К И",
+                "personal-skills": "Личные навыки",
+                "skill-time-management": "Управление временем",
+                "skill-time-management-desc": "Эффективно управлять временем для достижения целей",
+                "skill-discipline": "Дисциплина",
+                "skill-discipline-desc": "Последовательно выполнять задачи и обязанности",
+                "skill-patience": "Терпение и настойчивость",
+                "skill-patience-desc": "Сохранять спокойствие перед трудностями",
+                "skill-responsibility": "Ответственность",
+                "skill-responsibility-desc": "Сдерживать обещания и хорошо выполнять обязательства",
+                "skill-confidence": "Уверенность",
+                "skill-confidence-desc": "Иметь уверенность в своих способностях",
+                "skill-prioritization": "Определение приоритетов",
+                "skill-prioritization-desc": "Способен определять порядок важности задачи",
+                "creative-skills": "Творчество",
+                "skill-writing": "Письмо",
+                "skill-writing-desc": "Способен хорошо писать рассказы, статьи и дневники",
+                "skill-drawing": "Рисование",
+                "skill-drawing-desc": "Способен рисовать различные объекты с хорошей техникой",
+                "skill-design": "Простой дизайн",
+                "skill-design-desc": "Способен создавать простые дизайны с помощью Canva",
+                "social-skills": "Социальные навыки",
+                "skill-teamwork": "Командная работа",
+                "skill-teamwork-desc": "Способен работать в команде для достижения общих целей",
+                "skill-negotiation": "Переговоры",
+                "skill-negotiation-desc": "Способен достигать взаимовыгодных соглашений",
+                "skill-empathy": "Эмпатия и забота",
+                "skill-empathy-desc": "Способен чувствовать и понимать чувства других",
+                "skill-listening": "Умение слушать",
+                "skill-listening-desc": "Способен слушать с полным вниманием и пониманием",
+                "documentation-title": "Документация",
+                "activity-title": "Групповые мероприятия",
+                "activity-desc": "Фотографии документации групповых мероприятий на открытом воздухе",
+                "activity-caption": "Групповые мероприятия на открытом воздухе",
+                "sketch-title": "Работа эскиза",
+                "sketch-desc": "Произведение карандашного эскиза",
+                "sketch-caption": "Произведение карандашного эскиза"
+            },
+            ko: {
+                welcome: "제 프로필에 오신 것을 환영합니다",
+                subtitle: "저의 여정과 능력을 탐색하세요",
+                "biodata-title": "개 인 정 보",
+                "name-label": "이름",
+                "birth-label": "출생지, 생년월일",
+                "gender-label": "성별",
+                "gender-value": "여성",
+                "religion-label": "종교",
+                "religion-value": "이슬람",
+                "nationality-label": "국적",
+                "nationality-value": "인도네시아",
+                "address-label": "주소",
+                "email-label": "이메일",
+                "hobby-label": "취미",
+                "hobby-value": "그림 그리기, 글쓰기, 읽기, 음악 듣기, 수영",
+                "strengths-title": "장 점",
+                "strength-1": "창의적",
+                "strength-2": "인내심",
+                "strength-3": "정직",
+                "strength-4": "비판적 사고",
+                "strength-5": "공감",
+                "strength-6": "부지런하고 끈기 있음",
+                "skills-title": "기 능",
+                "personal-skills": "개인 기술",
+                "skill-time-management": "시간 관리",
+                "skill-time-management-desc": "목표를 달성하기 위해 시간을 효과적으로 관리",
+                "skill-discipline": "규율",
+                "skill-discipline-desc": "업무와 책임을 일관되게 수행",
+                "skill-patience": "인내심과 끈기",
+                "skill-patience-desc": "어려움을 침착하게 견뎌냄",
+                "skill-responsibility": "책임감",
+                "skill-responsibility-desc": "약속을 지키고 의무를 잘 이행",
+                "skill-confidence": "자신감",
+                "skill-confidence-desc": "자신의 능력에 대한 확신을 가짐",
+                "skill-prioritization": "우선순위 정하기",
+                "skill-prioritization-desc": "업무의 중요도 순서를 결정할 수 있음",
+                "creative-skills": "창의성",
+                "skill-writing": "글쓰기",
+                "skill-writing-desc": "단편 소설, 기사, 일기를 잘 쓸 수 있음",
+                "skill-drawing": "그림 그리기",
+                "skill-drawing-desc": "좋은 기술로 다양한 객체를 그릴 수 있음",
+                "skill-design": "간단한 디자인",
+                "skill-design-desc": "Canva를 사용하여 간단한 디자인을 만들 수 있음",
+                "social-skills": "사회적 기술",
+                "skill-teamwork": "팀워크",
+                "skill-teamwork-desc": "공통의 목표를 달성하기 위해 팀에서 일할 수 있음",
+                "skill-negotiation": "협상",
+                "skill-negotiation-desc": "상호 이익이 되는 합의에 도달할 수 있음",
+                "skill-empathy": "공감과 배려",
+                "skill-empathy-desc": "타인의 감정을 느끼고 이해할 수 있음",
+                "skill-listening": "경청 능력",
+                "skill-listening-desc": "완전한 주의와 이해로 들을 수 있음",
+                "documentation-title": "문서",
+                "activity-title": "그룹 활동",
+                "activity-desc": "야외 그룹 활동 문서화 사진",
+                "activity-caption": "야외 그룹 활동",
+                "sketch-title": "스케치 작품",
+                "sketch-desc": "연필 스케치 작품",
+                "sketch-caption": "연필 스케치 작품"
+            },
+            nl: {
+                welcome: "Welkom bij Mijn Profiel",
+                subtitle: "Verken mijn reis en vaardigheden",
+                "biodata-title": "P E R S O O N L I J K E G E G E V E N S",
+                "name-label": "Naam",
+                "birth-label": "Geboorteplaats, -datum",
+                "gender-label": "Geslacht",
+                "gender-value": "Vrouwelijk",
+                "religion-label": "Religie",
+                "religion-value": "Islam",
+                "nationality-label": "Nationaliteit",
+                "nationality-value": "Indonesië",
+                "address-label": "Adres",
+                "email-label": "E-mail",
+                "hobby-label": "Hobby's",
+                "hobby-value": "Tekenen, schrijven, lezen, naar muziek luisteren, zwemmen",
+                "strengths-title": "V O O R D E L E N",
+                "strength-1": "Creatief",
+                "strength-2": "Geduldig",
+                "strength-3": "Eerlijk",
+                "strength-4": "Kritisch denken",
+                "strength-5": "Empathisch",
+                "strength-6": "Vlijtig en volhardend",
+                "skills-title": "V A A R D I G H E D E N",
+                "personal-skills": "Persoonlijke vaardigheden",
+                "skill-time-management": "Tijdsbeheer",
+                "skill-time-management-desc": "Effectief tijd beheren om doelen te bereiken",
+                "skill-discipline": "Discipline",
+                "skill-discipline-desc": "Consistent in het uitvoeren van taken en verantwoordelijkheden",
+                "skill-patience": "Geduld en volharding",
+                "skill-patience-desc": "Moeilijkheden met kalmte doorstaan",
+                "skill-responsibility": "Verantwoordelijkheid",
+                "skill-responsibility-desc": "Beloftes nakomen en verplichtingen goed vervullen",
+                "skill-confidence": "Zelfvertrouwen",
+                "skill-confidence-desc": "Vertrouwen hebben in eigen capaciteiten",
+                "skill-prioritization": "Prioritering",
+                "skill-prioritization-desc": "In staat om de belangrijkheidsvolgorde van een taak te bepalen",
+                "creative-skills": "Creatief",
+                "skill-writing": "Schrijven",
+                "skill-writing-desc": "In staat om korte verhalen, artikelen en dagboeken goed te schrijven",
+                "skill-drawing": "Tekenen",
+                "skill-drawing-desc": "In staat om verschillende objecten met goede technieken te tekenen",
+                "skill-design": "Eenvoudig ontwerp",
+                "skill-design-desc": "In staat om eenvoudige ontwerpen te maken met Canva",
+                "social-skills": "Sociale vaardigheden",
+                "skill-teamwork": "Samenwerken",
+                "skill-teamwork-desc": "In staat om in een team te werken om gemeenschappelijke doelen te bereiken",
+                "skill-negotiation": "Onderhandeling",
+                "skill-negotiation-desc": "In staat om wederzijds voordelige overeenkomsten te bereiken",
+                "skill-empathy": "Empathie en zorg",
+                "skill-empathy-desc": "In staat om de gevoelens van anderen te voelen en te begrijpen",
+                "skill-listening": "Luistervaardigheid",
+                "skill-listening-desc": "In staat om met volledige aandacht en begrip te luisteren",
+                "documentation-title": "Documentatie",
+                "activity-title": "Groepsactiviteiten",
+                "activity-desc": "Documentatiefoto's van buiten groepsactiviteiten",
+                "activity-caption": "Buiten groepsactiviteiten",
+                "sketch-title": "Schetswerk",
+                "sketch-desc": "Potloodschets kunstwerk",
+                "sketch-caption": "Potloodschets kunstwerk"
+            },
+            ar: {
+                welcome: "مرحبًا بملفي الشخصي",
+                subtitle: "استكشف رحلتي وقدراتي",
+                "biodata-title": "ال ب ي ا ن ا ت ش خ ص ي ة",
+                "name-label": "الاسم",
+                "birth-label": "مكان وتاريخ الميلاد",
+                "gender-label": "الجنس",
+                "gender-value": "أنثى",
+                "religion-label": "الديانة",
+                "religion-value": "الإسلام",
+                "nationality-label": "الجنسية",
+                "nationality-value": "إندونيسيا",
+                "address-label": "العنوان",
+                "email-label": "البريد الإلكتروني",
+                "hobby-label": "الهوايات",
+                "hobby-value": "الرسم، الكتابة، القراءة، الاستماع إلى الموسيقى، السباحة",
+                "strengths-title": "م ز ا ي ا",
+                "strength-1": "مبدع",
+                "strength-2": "صبور",
+                "strength-3": "صادق",
+                "strength-4": "تفكير نقدي",
+                "strength-5": "تعاطف",
+                "strength-6": "مجتهد ومثابر",
+                "skills-title": "م ه ا ر ا ت",
+                "personal-skills": "المهارات الشخصية",
+                "skill-time-management": "إدارة الوقت",
+                "skill-time-management-desc": "إدارة الوقت بفعالية لتحقيق الأهداف",
+                "skill-discipline": "انضباط",
+                "skill-discipline-desc": "الالتزام في أداء المهام والمسؤوليات",
+                "skill-patience": "صبر وثبات",
+                "skill-patience-desc": "تحمل الصعوبات بهدوء",
+                "skill-responsibility": "مسؤولية",
+                "skill-responsibility-desc": "الوفاء بالوعود وتنفيذ الالتزامات بشكل جيد",
+                "skill-confidence": "ثقة",
+                "skill-confidence-desc": "الثقة في قدرات المرء الذاتية",
+                "skill-prioritization": "تحديد الأولويات",
+                "skill-prioritization-desc": "القدرة على تحديد ترتيب أهمية المهمة",
+                "creative-skills": "إبداع",
+                "skill-writing": "كتابة",
+                "skill-writing-desc": "القدرة على كتابة القصص القصيرة والمقالات واليوميات بشكل جيد",
+                "skill-drawing": "رسم",
+                "skill-drawing-desc": "القدرة على رسم كائنات مختلفة بتقنيات جيدة",
+                "skill-design": "تصميم بسيط",
+                "skill-design-desc": "القدرة على إنشاء تصاميم بسيطة باستخدام Canva",
+                "social-skills": "المهارات الاجتماعية",
+                "skill-teamwork": "العمل الجماعي",
+                "skill-teamwork-desc": "القدرة على العمل في فريق لتحقيق أهداف مشتركة",
+                "skill-negotiation": "تفاوض",
+                "skill-negotiation-desc": "القدرة على التوصل إلى اتفاقيات مفيدة للطرفين",
+                "skill-empathy": "تعاطف واهتمام",
+                "skill-empathy-desc": "القدرة على الشعور وفهم مشاعر الآخرين",
+                "skill-listening": "قدرة الاستماع",
+                "skill-listening-desc": "القدرة على الاستماع باهتمام كامل وفهم",
+                "documentation-title": "توثيق",
+                "activity-title": "أنشطة جماعية",
+                "activity-desc": "صور توثيق لأنشطة جماعية في الهواء الطلق",
+                "activity-caption": "أنشطة جماعية في الهواء الطلق",
+                "sketch-title": "عمل رسم",
+                "sketch-desc": "عمل فني بالرصاص",
+                "sketch-caption": "عمل فني بالرصاص"
+            }
+        };
+
+        // Fungsi untuk mengganti bahasa
+        function changeLanguage(lang) {
+            // Simpan preferensi bahasa di localStorage
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Ubah atribut lang pada body
+            document.body.lang = lang;
+            
+            // Ubah teks pada semua elemen dengan atribut data-translate
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Ubah kelas aktif pada tombol bahasa
+            const buttons = document.querySelectorAll('.language-btn');
+            buttons.forEach(button => {
+                if (button.getAttribute('data-lang') === lang) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+        }
+
+        // Event listener untuk tombol bahasa
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cek preferensi bahasa yang tersimpan
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            if (savedLanguage) {
+                changeLanguage(savedLanguage);
+            }
+            
+            // Tambahkan event listener ke tombol bahasa
+            const languageButtons = document.querySelectorAll('.language-btn');
+            languageButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    changeLanguage(lang);
+                });
+            });
+            
+            // Animasi progress bar
+            const progressBars = document.querySelectorAll('.skill-progress');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.getAttribute('data-width');
+                        entry.target.style.width = width;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            progressBars.forEach(bar => {
+                observer.observe(bar);
+            });
+            
+            // Memastikan gambar dokumentasi dimuat dengan benar
+            const documentationImages = document.querySelectorAll('.frame img');
+            documentationImages.forEach(img => {
+                // Coba muat ulang gambar jika gagal
+                img.addEventListener('error', function() {
+                    console.log('Gambar gagal dimuat:', this.src);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
